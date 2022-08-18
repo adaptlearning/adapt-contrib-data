@@ -1,0 +1,75 @@
+{
+  "bugs": {
+    "url": "https://github.com/adaptlearning/adapt-contrib-data/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Data layer extension",
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.5",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "conventional-changelog-eslint": "^3.0.9",
+    "semantic-release": "^19.0.3"
+  },
+  "framework": ">=5.20.2",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-data#readme",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPL-3.0",
+  "name": "adapt-contrib-data",
+  "main": "/js/adapt-contrib-data.js",
+  "displayName": "Data",
+  "extension": "data",
+  "_targetAttribute": "_data",
+  "adapt_framework": {
+    "compilationMap": {
+      "core/js/collections/adaptCollection": "adapt-contrib-data/js/AdaptCollection",
+      "core/js/models/buildModel": "adapt-contrib-data/js/BuildModel",
+      "core/js/models/configModel": "adapt-contrib-data/js/ConfigModel",
+      "core/js/models/routerModel": "adapt-contrib-data/js/RouterModel",
+      "core/js/data": "adapt-contrib-data/js/data",
+      "core/js/location": "adapt-contrib-data/js/location",
+      "core/js/router": "adapt-contrib-data/js/router",
+      "core/js/scrolling": "adapt-contrib-data/js/scrolling",
+      "core/js/startController": "adapt-contrib-data/js/startController"
+    }
+  },
+  "private": true,
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "eslint"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "eslint"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "Chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adaptlearning/adapt-contrib-data.git"
+  },
+  "version": "1.0.0"
+}
